@@ -14,12 +14,10 @@ const ProductScreen = () => {
       const { data } = await axios.get(`/api/products/${id}`)
 
       setProduct(data)
-
-      console.log(id)
     }
 
     fetchProduct()
-  }, [])
+  }, [id])
 
   return (
     <>
