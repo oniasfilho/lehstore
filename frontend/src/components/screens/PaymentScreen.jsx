@@ -29,14 +29,14 @@ const PaymentScreen = () => {
   return (
     <FormContainer>
       <CheckoutSteps step1 step2 step3 />
-      <h1>Payment Method</h1>
+      <h1>Forma de Pagamento</h1>
       <Form onSubmit={submitHandler}>
         <Form.Group>
-          <Form.Label as="legend">Select Method</Form.Label>
+          <Form.Label as="legend">Selecione a Forma de Pagamento</Form.Label>
           <Col>
             <Form.Check
               type="radio"
-              label="Paypal or Credit Card"
+              label="Paypal ou Cartão de Crédito"
               id="PayPal"
               name="paymentMethod"
               value="PayPal"
@@ -47,7 +47,7 @@ const PaymentScreen = () => {
         </Form.Group>
 
         <Button type="submit" variant="primary">
-          Continue
+          Continuar
         </Button>
       </Form>
     </FormContainer>

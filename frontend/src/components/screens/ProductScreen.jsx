@@ -28,7 +28,7 @@ const ProductScreen = () => {
   return (
     <>
       <Link className="btn btn-dark my-3" to="/">
-        Go Back
+        Voltar
       </Link>
 
       {loading ? (
@@ -53,7 +53,7 @@ const ProductScreen = () => {
                     text={`${product.numReviews} reviews`}
                   />
                 </ListGroup.Item>
-                <ListGroup.Item>Price: ${product.price}</ListGroup.Item>
+                <ListGroup.Item>Preço: R$ {product.price}</ListGroup.Item>
                 <ListGroup.Item>
                   Description: {product.description}
                 </ListGroup.Item>
@@ -64,9 +64,9 @@ const ProductScreen = () => {
                 <ListGroup variant="flush">
                   <ListGroup.Item>
                     <Row>
-                      <Col>Price:</Col>
+                      <Col>Preço:</Col>
                       <Col>
-                        <strong>${product.price}</strong>
+                        <strong>R$ {product.price}</strong>
                       </Col>
                     </Row>
                   </ListGroup.Item>
@@ -75,7 +75,9 @@ const ProductScreen = () => {
                     <Row>
                       <Col>Status:</Col>
                       <Col>
-                        {product.countInStock > 0 ? 'In Stock' : 'Out Of Stock'}
+                        {product.countInStock > 0
+                          ? 'Disponível'
+                          : 'Indisponível'}
                       </Col>
                     </Row>
                   </ListGroup.Item>
@@ -83,7 +85,7 @@ const ProductScreen = () => {
                   {product.countInStock > 0 && (
                     <ListGroup.Item>
                       <Row>
-                        <Col>Qty</Col>
+                        <Col>Quantidade</Col>
                         <Col>
                           <Form.Control
                             as="select"
@@ -110,7 +112,7 @@ const ProductScreen = () => {
                       type="button"
                       disabled={product.countInStock === 0}
                     >
-                      Add To Cart
+                      Adicionar ao Carrinho
                     </Button>
                   </ListGroup.Item>
                 </ListGroup>
